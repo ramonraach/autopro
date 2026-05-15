@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoPro — Limpeza Automotiva Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #080808;
+      --carbon:  #111111;
+      --graph:   #181818;
+      --border:  #262626;
+      --gold:    #c9a84c;
+      --gold-lt: #e2c46a;
+      --gold-dk: #7a6230;
+      --white:   #f4f3ee;
+      --muted:   #7a7a72;
+      --serif:   'Lora', Georgia, serif;
+      --sans:    'Outfit', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(8,8,8,0.93); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; flex-direction: column; gap: 0.22rem; }
+    .logo-text { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; letter-spacing: 0.28em; color: var(--white); text-transform: uppercase; line-height: 1; }
+    .logo-line { height: 1px; background: linear-gradient(to right, var(--gold), var(--gold-dk), transparent); }
+    .logo-sub { font-size: 0.48rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+    .nav-cta { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 0.65rem 1.6rem; text-decoration: none; transition: background 0.25s; }
+    .nav-cta:hover { background: var(--gold-lt); }
+
+    /* ── HERO ── */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 5rem; }
+
+    .eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem; }
+    .eyebrow::before { content: ''; display: block; width: 1.75rem; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+    h1 { font-family: var(--serif); font-size: clamp(2.6rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.4rem; }
+    h1 em { font-style: italic; color: var(--gold-lt); }
+
+    .hero-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.75; max-width: 360px; margin-bottom: 2.5rem; }
+
+    .price-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 2rem; }
+    .price-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .price { font-family: var(--serif); font-size: 2.8rem; font-weight: 400; color: var(--white); line-height: 1; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--black); font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.4rem; width: fit-content; transition: all 0.3s ease; }
+    .btn::after { content: '→'; }
+    .btn:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 16px 48px rgba(201,168,76,0.22); }
+    .btn-lg { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; padding: 1.25rem 4rem; }
+    .btn-lg:hover { box-shadow: 0 24px 64px rgba(201,168,76,0.28); }
+
+    .hero-note { margin-top: 0.9rem; font-size: 0.68rem; color: var(--muted); }
+
+    .hero-right { position: relative; overflow: hidden; border-left: 1px solid var(--border); }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge { position: absolute; top: 2rem; left: 2rem; background: var(--gold); color: var(--black); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.45rem 0.9rem; z-index: 2; }
+
+    /* ── STATS ── */
+    .stats { display: flex; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stat { flex: 1; padding: 2rem; text-align: center; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--gold); display: block; margin-bottom: 0.3rem; }
+    .stat-l { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 6rem 5rem; }
+    .section.alt { background: var(--carbon); }
+    .section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+    .section-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .section-label.center { justify-content: center; }
+
+    h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
+    h2 em { font-style: italic; color: var(--gold-lt); }
+    .body-text { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+
+    /* ── ANTES/DEPOIS ── */
+    .ba-wrap { border: 1px solid var(--border); overflow: hidden; }
+    .ba-item { position: relative; overflow: hidden; }
+    .ba-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .ba-item:hover img { transform: scale(1.03); }
+    .ba-bar { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem 1.5rem; background: linear-gradient(to top, rgba(8,8,8,0.85), transparent); display: flex; align-items: center; gap: 0.75rem; }
+    .ba-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.75rem; }
+    .ba-item.bad .ba-tag { background: rgba(255,255,255,0.1); color: var(--muted); }
+    .ba-item.good .ba-tag { background: var(--gold); color: var(--black); }
+    .ba-cap { font-family: var(--serif); font-size: 0.85rem; font-style: italic; color: var(--white); }
+    .ba-sep { height: 1px; background: var(--border); display: flex; align-items: center; justify-content: center; position: relative; }
+    .ba-sep span { background: var(--black); padding: 0 1rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dk); position: relative; z-index: 1; }
+
+    /* ── VÍDEO ── */
+    .video-section { background: var(--carbon); padding: 5rem; }
+    .video-header { text-align: center; margin-bottom: 2.5rem; }
+    .video-wrap {
+      position: relative; width: 100%; max-width: 900px; margin: 0 auto;
+      border: 1px solid var(--border); overflow: hidden;
+      aspect-ratio: 16/9; background: var(--graph);
+    }
+    /* Quando tiver o vídeo, adicione dentro de .video-wrap:
+       <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+         <source src="video.mp4" type="video/mp4" />
+       </video>
+       E remova o .video-placeholder inteiro */
+    .video-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+      background: linear-gradient(135deg, var(--graph), var(--carbon));
+      position: absolute; inset: 0;
+    }
+    .video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .play-btn {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+    }
+    .play-circle {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(201,168,76,0.15); border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; transition: all 0.3s;
+    }
+    .play-note { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+    /* ── BENEFÍCIOS ── */
+    .b-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+    .b-item { padding: 2.5rem 2rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.3s; }
+    .b-item:hover { background: rgba(201,168,76,0.03); }
+    .b-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+    .b-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--white); }
+    .b-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── DEPOIMENTOS ── */
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 3.5rem; }
+    .testi { background: var(--graph); border: 1px solid var(--border); padding: 2rem; position: relative; }
+    .testi-q { font-family: var(--serif); font-size: 3rem; color: var(--gold); opacity: 0.15; position: absolute; top: 1rem; right: 1.25rem; line-height: 1; }
+    .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.08em; margin-bottom: 0.9rem; }
+    .testi-text { font-family: var(--serif); font-size: 0.95rem; font-style: italic; line-height: 1.7; color: var(--white); margin-bottom: 1.25rem; }
+    .testi-author { display: flex; align-items: center; gap: 0.6rem; }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,var(--gold-dk),var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; color: var(--black); flex-shrink: 0; }
+    .author-name { font-size: 0.78rem; font-weight: 500; color: var(--white); }
+    .author-city { font-size: 0.68rem; color: var(--muted); }
+
+    /* ── LIFESTYLE / GATILHO FINAL ── */
+    .lifestyle { position: relative; overflow: hidden; height: 70vh; min-height: 480px; }
+    .lifestyle img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); }
+    .lifestyle-over {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(8,8,8,0.8) 0%, rgba(8,8,8,0.25) 60%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: center; padding: 0 5rem;
+    }
+    .lifestyle-quote { font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,3rem); font-weight: 400; line-height: 1.25; font-style: italic; color: var(--white); max-width: 560px; margin-bottom: 1.25rem; }
+    .lifestyle-quote em { font-style: normal; color: var(--gold-lt); }
+    .lifestyle-sub { font-size: 0.88rem; color: rgba(244,243,238,0.6); max-width: 400px; line-height: 1.7; margin-bottom: 2.5rem; }
+
+    /* ── CTA ── */
+    .cta { padding: 7rem 5rem; text-align: center; background: var(--carbon); position: relative; overflow: hidden; }
+    .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 350px; background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; }
+    .cta-title { font-family: var(--serif); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; position: relative; }
+    .cta-title em { font-style: italic; color: var(--gold-lt); }
+    .cta-sub { color: var(--muted); font-size: 0.92rem; max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .cta-price { font-family: var(--serif); font-size: 3.5rem; font-weight: 400; color: var(--white); margin-bottom: 0.5rem; }
+    .cta-ship { font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; letter-spacing: 0.05em; }
+    .guarantee { margin-top: 1.25rem; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: linear-gradient(to right, transparent, var(--gold-dk), transparent); }
+
+    /* ── FOOTER ── */
+    footer { padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.05em; }
+
+    /* ── FADE IN ── */
+    .fi { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fi.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 860px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-cta { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 68px; }
+      .hero-left { padding: 3.5rem 1.5rem 2.5rem; order: 1; }
+      .hero-right { order: 2; min-height: 300px; }
+      .stats { flex-wrap: wrap; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); min-width: 50%; }
+      .section { padding: 4rem 1.5rem; }
+      .section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .b-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .lifestyle { height: 55vh; min-height: 340px; }
+      .lifestyle-over { padding: 0 1.5rem; }
+      .video-section { padding: 4rem 1.5rem; }
+      .cta { padding: 5rem 1.5rem; }
+      .btn-lg { width: 100%; justify-content: center; padding: 1.1rem 2rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 480px) { .b-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-text">AutoPro</div>
+    <div class="logo-line"></div>
+    <div class="logo-sub">Limpeza Automotiva</div>
+  </div>
+  <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="nav-cta">Garantir o meu</a>
+</nav>
+
+<!-- HERO — imagem 1: painel luxo, ângulo cinematográfico -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Limpeza Automotiva Premium</div>
+    <h1>Seu carro merece<br/>o mesmo padrão<br/><em>que você.</em></h1>
+    <p class="hero-sub">Chega de lava-jato caro e fila de espera. Com o AutoPro, limpeza profissional em 5 minutos — onde e quando você quiser.</p>
+    <div class="price-row">
+      <span class="price-label">por apenas</span>
+      <span class="price">R$ 97,00</span>
+    </div>
+    <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="btn">Quero o meu agora</a>
+    <p class="hero-note">✦ Pagamento seguro &nbsp; ✦ Entrega para todo o Brasil</p>
+  </div>
+  <div class="hero-right">
+    <div class="badge">🔥 Em Alta</div>
+    <img src="hero.png" alt="AutoPro — aspirador premium no interior do carro" />
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat fi"><span class="stat-n">5min</span><span class="stat-l">Limpeza completa</span></div>
+  <div class="stat fi"><span class="stat-n">100%</span><span class="stat-l">Sem fio</span></div>
+  <div class="stat fi"><span class="stat-n">R$2.400</span><span class="stat-l">Economizados por ano</span></div>
+  <div class="stat fi"><span class="stat-n">∞</span><span class="stat-l">Onde quiser</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROBLEMA + ANTES/DEPOIS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="fi">
+      <div class="section-label">O problema</div>
+      <h2>R$50 no lava-jato<br/>toda semana.<br/><em>Isso precisa parar.</em></h2>
+      <p class="body-text">Carro sujo, migalhas entre os bancos, pelo de animal no estofado. Você paga caro no lava-jato ou usa um aspirador doméstico que não alcança nada. Existe uma terceira opção — e ela cabe na palma da mão.</p>
+    </div>
+    <div class="ba-wrap fi">
+      <!-- ANTES: imagem 3 — aspirador com migalhas em ação -->
+      <div class="ba-item bad">
+        <img src="antes.png" alt="Banco com migalhas — antes do AutoPro" />
+        <div class="ba-bar">
+          <span class="ba-tag">Antes</span>
+          <span class="ba-cap">Sujeira acumulada, migalhas, poeira</span>
+        </div>
+      </div>
+      <div class="ba-sep"><span>vs</span></div>
+      <!-- DEPOIS: imagem 2 — aspirador no banco limpo de couro -->
+      <div class="ba-item good">
+        <img src="depois.png" alt="Interior limpo — depois do AutoPro" />
+        <div class="ba-bar">
+          <span class="ba-tag">Com AutoPro</span>
+          <span class="ba-cap">Limpo, organizado, em 5 minutos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section alt">
+  <div class="fi" style="text-align:center;margin-bottom:3rem">
+    <div class="section-label center">O que você leva</div>
+    <h2 style="text-align:center">Projetado para <em>quem tem padrão</em></h2>
+  </div>
+  <div class="b-grid fi">
+    <div class="b-item"><span class="b-icon">⚡</span><div class="b-title">Alta sucção</div><p class="b-desc">Remove poeira, migalhas e pelos de qualquer superfície do veículo com potência real.</p></div>
+    <div class="b-item"><span class="b-icon">🔋</span><div class="b-title">100% sem fio</div><p class="b-desc">Recarregável via USB. Use em qualquer lugar, sem depender de tomada ou fio.</p></div>
+    <div class="b-item"><span class="b-icon">🎯</span><div class="b-title">Alcança tudo</div><p class="b-desc">Bico fino que chega entre bancos, no painel e em cada canto do porta-malas.</p></div>
+    <div class="b-item"><span class="b-icon">🌿</span><div class="b-title">Fácil de limpar</div><p class="b-desc">Filtro removível e lavável. Esvazia em segundos, sem sujar as mãos.</p></div>
+    <div class="b-item"><span class="b-icon">🏆</span><div class="b-title">Lifestyle premium</div><p class="b-desc">Carro organizado é extensão de quem você é. Design discreto, acabamento de qualidade.</p></div>
+    <div class="b-item"><span class="b-icon">💰</span><div class="b-title">Economize sempre</div><p class="b-desc">Uma compra única. Quem paga R$50/semana gasta R$2.400 por ano no lava-jato.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VÍDEO -->
+<section class="video-section fi">
+  <div class="video-header">
+    <div class="section-label center">Veja funcionando</div>
+    <h2 style="text-align:center">O AutoPro <em>em ação</em></h2>
+  </div>
+  <div class="video-wrap">
+    <!--
+      QUANDO TIVER O VÍDEO, substitua todo este bloco por:
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+    -->
+    <div class="video-placeholder">
+      <img src="antes.png" alt="AutoPro em ação" />
+    </div>
+    <div class="play-btn">
+      <div class="play-circle">▶</div>
+      <span class="play-note">Adicione o vídeo aqui</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section">
+  <div class="fi" style="text-align:center">
+    <div class="section-label center">Quem já tem</div>
+    <h2 style="text-align:center">O que estão <em>dizendo</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi fi">
+      <div class="testi-q">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Comprei sem expectativa e me surpreendi. Limpei o carro em 8 minutos — coisa que normalmente levava o dobro e ainda pagava caro no lava-jato.</p>
+      <div class="testi-author"><div class="avatar">M</div><div><div class="author-name">Marcos V.</div><div class="author-city">São Paulo, SP</div></div></div>
+    </div>
+    <div class="testi fi">
+      <div class="testi-q">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Tenho cachorro e o pelo nos bancos era um problema sério. O AutoPro resolveu completamente. Cabe no porta-luvas e uso toda semana.</p>
+      <div class="testi-author"><div class="avatar">C</div><div><div class="author-name">Carolina F.</div><div class="author-city">Curitiba, PR</div></div></div>
+    </div>
+    <div class="testi fi">
+      <div class="testi-q">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Filho pequeno, carro sempre cheio de migalha. Agora limpo em 5 minutos, qualquer dia. Sem estresse, sem lava-jato, sem fila.</p>
+      <div class="testi-author"><div class="avatar">R</div><div><div class="author-name">Ricardo A.</div><div class="author-city">Belo Horizonte, MG</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GATILHO LIFESTYLE — imagem 2: close aspirador no banco de couro premium -->
+<div class="lifestyle fi">
+  <img src="depois.png" alt="AutoPro — interior premium" />
+  <div class="lifestyle-over">
+    <p class="lifestyle-quote">Não é só um aspirador.<br/>É o padrão que você<br/><em>escolheu ter.</em></p>
+    <p class="lifestyle-sub">Seu carro é o seu espaço. Ele diz quem você é antes mesmo de você abrir a boca. O AutoPro existe para quem entende isso.</p>
+    <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="btn">Quero o meu agora</a>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="fi">
+    <div class="section-label center">Oferta exclusiva</div>
+    <h2 class="cta-title">Seu carro merece<br/><em>melhor do que isso.</em></h2>
+    <p class="cta-sub">Uma compra. Para sempre sem depender de lava-jato. Limpeza profissional toda vez que você quiser.</p>
+    <div class="cta-price">R$ 97,00</div>
+    <div class="cta-ship">+ frete calculado no checkout &nbsp;·&nbsp; Entrega para todo o Brasil</div>
+    <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="btn btn-lg">Garantir o meu agora</a>
+    <div class="guarantee">🔒 Pagamento 100% seguro &nbsp;·&nbsp; Entrega rastreada</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">
+    <div class="logo-text" style="font-size:1rem;color:var(--muted)">AutoPro</div>
+    <div class="logo-line"></div>
+    <div class="logo-sub">Limpeza Automotiva</div>
+  </div>
+  <div class="footer-copy">© 2026 AutoPro. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
