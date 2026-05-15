@@ -62,9 +62,21 @@
 
     .hero-note { margin-top: 0.9rem; font-size: 0.68rem; color: var(--muted); }
 
+    /* Hero foto — sem badge, com texto "Em Alta" elegante */
     .hero-right { position: relative; overflow: hidden; border-left: 1px solid var(--border); }
     .hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .badge { position: absolute; top: 2rem; left: 2rem; background: var(--gold); color: var(--black); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.45rem 0.9rem; z-index: 2; }
+    .em-alta {
+      position: absolute; top: 2rem; left: 2rem;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .em-alta::before {
+      content: '';
+      display: block; width: 1.2rem; height: 1px;
+      background: var(--gold);
+    }
 
     /* ── SECTIONS ── */
     .section { padding: 6rem 5rem; }
@@ -121,7 +133,7 @@
     .author-name { font-size: 0.78rem; font-weight: 500; color: var(--white); }
     .author-city { font-size: 0.68rem; color: var(--muted); }
 
-    /* ── LIFESTYLE FULLSCREEN ── */
+    /* ── LIFESTYLE ── */
     .lifestyle { position: relative; overflow: hidden; height: 70vh; min-height: 480px; }
     .lifestyle img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); }
     .lifestyle-over { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.8) 0%, rgba(8,8,8,0.25) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: center; padding: 0 5rem; }
@@ -135,7 +147,13 @@
     .cta-title { font-family: var(--serif); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; position: relative; }
     .cta-title em { font-style: italic; color: var(--gold-lt); }
     .cta-sub { color: var(--muted); font-size: 0.92rem; max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.75; }
-    .cta-price { font-family: var(--serif); font-size: 3.5rem; font-weight: 400; color: var(--white); margin-bottom: 2rem; }
+
+    /* Bloco de preço com desconto */
+    .price-block { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; margin-bottom: 2rem; }
+    .price-old { font-family: var(--sans); font-size: 1.1rem; font-weight: 300; color: var(--muted); text-decoration: line-through; letter-spacing: 0.05em; }
+    .price-discount { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.1); border: 1px solid var(--gold-dk); padding: 0.3rem 0.9rem; }
+    .price-new { font-family: var(--serif); font-size: 3.8rem; font-weight: 400; color: var(--white); line-height: 1; }
+
     .guarantee { margin-top: 1.25rem; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
 
     /* ── DIVIDER ── */
@@ -182,7 +200,7 @@
   <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="nav-cta">Garantir o meu</a>
 </nav>
 
-<!-- HERO — sem preço, só headline + CTA -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="eyebrow">Limpeza Automotiva Premium</div>
@@ -192,7 +210,8 @@
     <p class="hero-note">✦ Pagamento seguro &nbsp; ✦ Entrega para todo o Brasil</p>
   </div>
   <div class="hero-right">
-    <div class="badge">🔥 Em Alta</div>
+    <!-- "Em Alta" elegante, sem caixa amarela -->
+    <div class="em-alta">Em Alta</div>
     <img src="hero.png" alt="AutoPro — aspirador premium no interior do carro" />
   </div>
 </section>
@@ -296,7 +315,7 @@
   </div>
 </section>
 
-<!-- LIFESTYLE FULLSCREEN — hero.png antes do CTA final -->
+<!-- LIFESTYLE -->
 <div class="lifestyle fi">
   <img src="hero.png" alt="AutoPro — interior premium" />
   <div class="lifestyle-over">
@@ -306,13 +325,17 @@
   </div>
 </div>
 
-<!-- CTA FINAL — sem menção a frete -->
+<!-- CTA FINAL com gatilho de desconto -->
 <section class="cta">
   <div class="fi">
     <div class="section-label center">Oferta exclusiva</div>
     <h2 class="cta-title">Seu carro merece<br/><em>melhor do que isso.</em></h2>
     <p class="cta-sub">Uma compra. Para sempre sem depender de lava-jato. Limpeza profissional toda vez que você quiser.</p>
-    <div class="cta-price">R$ 97,00</div>
+    <div class="price-block">
+      <span class="price-old">De R$ 147,00</span>
+      <span class="price-discount">🔥 Oferta especial — economize R$50</span>
+      <span class="price-new">R$ 97,00</span>
+    </div>
     <a href="https://pay.kaiross.com.br/7qXGFiiwLPGg" class="btn btn-lg">Garantir o meu agora</a>
     <div class="guarantee">🔒 Pagamento 100% seguro &nbsp;·&nbsp; Entrega rastreada para todo o Brasil</div>
   </div>
