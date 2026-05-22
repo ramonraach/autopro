@@ -43,27 +43,10 @@
       backdrop-filter: blur(12px);
       border-bottom: 2px solid var(--pink);
     }
-
     .logo { display: flex; flex-direction: column; gap: 0.15rem; }
-    .logo-text {
-      font-family: var(--serif);
-      font-size: 1.4rem; font-weight: 600;
-      letter-spacing: 0.1em; color: var(--pink);
-      line-height: 1;
-    }
-    .logo-sub {
-      font-size: 0.48rem; letter-spacing: 0.4em;
-      text-transform: uppercase; color: var(--muted);
-      font-family: var(--sans); font-weight: 500;
-    }
-
-    .nav-cta {
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--white);
-      background: var(--pink); padding: 0.7rem 1.8rem;
-      text-decoration: none; transition: all 0.25s;
-      border-radius: 100px;
-    }
+    .logo-text { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; letter-spacing: 0.1em; color: var(--pink); line-height: 1; }
+    .logo-sub { font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); font-family: var(--sans); font-weight: 500; }
+    .nav-cta { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--pink); padding: 0.7rem 1.8rem; text-decoration: none; transition: all 0.25s; border-radius: 100px; }
     .nav-cta:hover { background: var(--pink-dk); transform: translateY(-1px); }
 
     /* ── HERO ── */
@@ -73,44 +56,23 @@
       padding-top: 72px;
       background: linear-gradient(135deg, var(--pink-soft) 0%, #fff0f8 50%, var(--pink-pale) 100%);
     }
-
     .hero-left {
       display: flex; flex-direction: column; justify-content: center;
       padding: 5rem 3.5rem 5rem 5rem;
     }
-
     .eyebrow {
       font-size: 0.65rem; font-weight: 600; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--pink);
       margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
     }
-    .eyebrow::before {
-      content: ''; display: block; width: 2rem; height: 2px;
-      background: var(--pink); flex-shrink: 0; border-radius: 2px;
-    }
+    .eyebrow::before { content: ''; display: block; width: 2rem; height: 2px; background: var(--pink); flex-shrink: 0; border-radius: 2px; }
 
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 4.5vw, 4rem);
-      font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem;
-      color: var(--dark);
-    }
+    h1 { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; color: var(--dark); }
     h1 em { font-style: italic; color: var(--pink); }
 
-    .hero-sub {
-      font-size: 1rem; color: var(--muted);
-      line-height: 1.75; max-width: 400px; margin-bottom: 2.5rem;
-    }
+    .hero-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.75; max-width: 400px; margin-bottom: 2.5rem; }
 
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      background: var(--pink); color: var(--white);
-      font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none; padding: 1.1rem 2.5rem;
-      width: fit-content; transition: all 0.3s ease;
-      border-radius: 100px;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--pink); color: var(--white); font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.5rem; width: fit-content; transition: all 0.3s ease; border-radius: 100px; }
     .btn::after { content: '→'; }
     .btn:hover { background: var(--pink-dk); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(233,30,140,0.35); }
     .btn-lg { padding: 1.3rem 4rem; font-size: 0.8rem; }
@@ -122,238 +84,85 @@
       display: flex; align-items: center; justify-content: center;
       padding: 3rem 2rem;
     }
-
-    .hero-img-wrap {
-      position: relative; width: 100%; max-width: 480px;
-    }
-
-    .hero-img-wrap img {
-      width: 100%; display: block;
-      filter: drop-shadow(0 20px 60px rgba(233,30,140,0.25));
-    }
-
-    .hero-badge {
-      position: absolute; top: 1rem; right: 1rem;
-      background: var(--pink); color: var(--white);
-      font-family: var(--sans); font-size: 0.6rem; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      padding: 0.5rem 1rem; border-radius: 100px;
-    }
+    .hero-img-wrap { position: relative; width: 100%; max-width: 480px; }
+    .hero-img-wrap img { width: 100%; display: block; filter: drop-shadow(0 20px 60px rgba(233,30,140,0.25)); }
+    .hero-badge { position: absolute; top: 1rem; right: 1rem; background: var(--pink); color: var(--white); font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1rem; border-radius: 100px; }
 
     /* ── STATS ── */
-    .stats {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      background: var(--pink);
-    }
-
-    .stat {
-      padding: 2rem 1.5rem; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); background: var(--pink); }
+    .stat { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.2); }
     .stat:last-child { border-right: none; }
-
-    .stat-n {
-      font-family: var(--serif); font-size: 2rem; font-weight: 600;
-      color: var(--white); display: block; margin-bottom: 0.3rem;
-    }
-    .stat-l {
-      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-    }
+    .stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--white); display: block; margin-bottom: 0.3rem; }
+    .stat-l { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
 
     /* ── SECTIONS ── */
     .section { padding: 6rem 5rem; }
     .section.pink-bg { background: var(--pink-soft); }
-    .section.pink-dark { background: var(--dark); color: var(--white); }
     .section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 
-    .section-label {
-      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--pink);
-      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem;
-    }
-    .section-label::before {
-      content: ''; display: block; width: 1.5rem; height: 2px;
-      background: var(--pink); flex-shrink: 0; border-radius: 2px;
-    }
+    .section-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--pink); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::before { content: ''; display: block; width: 1.5rem; height: 2px; background: var(--pink); flex-shrink: 0; border-radius: 2px; }
     .section-label.center { justify-content: center; }
 
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 500; line-height: 1.2; margin-bottom: 1.5rem;
-    }
+    h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 500; line-height: 1.2; margin-bottom: 1.5rem; }
     h2 em { font-style: italic; color: var(--pink); }
-    .section.pink-dark h2 em { color: var(--pink-lt); }
 
     .body-text { font-size: 0.95rem; color: var(--muted); line-height: 1.85; }
-    .section.pink-dark .body-text { color: rgba(255,255,255,0.5); }
 
-    /* ── FOTO PRODUTO ── */
-    .produto-foto img {
-      width: 100%; display: block;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(233,30,140,0.15);
-    }
+    .produto-foto img { width: 100%; display: block; border-radius: 12px; box-shadow: 0 20px 60px rgba(233,30,140,0.15); }
 
     /* ── BENEFÍCIOS ── */
-    .b-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-
-    .b-item {
-      background: var(--white); padding: 2.5rem 2rem;
-      border: 2px solid var(--border); border-radius: 16px;
-      transition: all 0.3s;
-    }
-    .b-item:hover {
-      border-color: var(--pink);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(233,30,140,0.12);
-    }
-
+    .b-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .b-item { background: var(--white); padding: 2.5rem 2rem; border: 2px solid var(--border); border-radius: 16px; transition: all 0.3s; }
+    .b-item:hover { border-color: var(--pink); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(233,30,140,0.12); }
     .b-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-    .b-title {
-      font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
-      margin-bottom: 0.6rem; color: var(--dark);
-    }
+    .b-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--dark); }
     .b-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
 
-    /* ── CITAÇÃO LIFESTYLE ── */
-    .lifestyle {
-      background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dk) 100%);
-      padding: 6rem 5rem; text-align: center; position: relative; overflow: hidden;
-    }
-
-    .lifestyle::before {
-      content: '✦';
-      position: absolute; font-size: 20rem; color: rgba(255,255,255,0.04);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      font-family: var(--serif); line-height: 1;
-    }
-
-    .lifestyle-quote {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 400; line-height: 1.3; font-style: italic;
-      color: var(--white); max-width: 700px; margin: 0 auto 1.5rem;
-      position: relative;
-    }
+    /* ── LIFESTYLE ── */
+    .lifestyle { background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dk) 100%); padding: 6rem 5rem; text-align: center; position: relative; overflow: hidden; }
+    .lifestyle-quote { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.3; font-style: italic; color: var(--white); max-width: 700px; margin: 0 auto 1.5rem; position: relative; }
     .lifestyle-quote em { font-style: normal; font-weight: 600; }
-
-    .lifestyle-sub {
-      font-size: 0.95rem; color: rgba(255,255,255,0.75);
-      max-width: 480px; margin: 0 auto 3rem; line-height: 1.8;
-    }
-
-    .btn-white {
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      background: var(--white); color: var(--pink);
-      font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none; padding: 1.1rem 2.5rem;
-      border-radius: 100px; transition: all 0.3s;
-    }
+    .lifestyle-sub { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 3rem; line-height: 1.8; }
+    .btn-white { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--white); color: var(--pink); font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.5rem; border-radius: 100px; transition: all 0.3s; }
     .btn-white::after { content: '→'; }
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
 
     /* ── DEPOIMENTOS ── */
-    .testi-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-
-    .testi {
-      background: var(--white); border: 2px solid var(--border);
-      padding: 2.5rem; position: relative; border-radius: 16px;
-      transition: all 0.3s;
-    }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .testi { background: var(--white); border: 2px solid var(--border); padding: 2.5rem; position: relative; border-radius: 16px; transition: all 0.3s; }
     .testi:hover { border-color: var(--pink); box-shadow: 0 8px 30px rgba(233,30,140,0.1); }
-
-    .testi-q {
-      font-family: var(--serif); font-size: 4rem; color: var(--pink);
-      opacity: 0.2; position: absolute; top: 1rem; right: 1.5rem; line-height: 1;
-    }
-
+    .testi-q { font-family: var(--serif); font-size: 4rem; color: var(--pink); opacity: 0.2; position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
     .stars { color: var(--pink); font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
-
-    .testi-text {
-      font-family: var(--serif); font-size: 1rem; font-style: italic;
-      line-height: 1.75; color: var(--dark); margin-bottom: 1.5rem;
-    }
-
+    .testi-text { font-family: var(--serif); font-size: 1rem; font-style: italic; line-height: 1.75; color: var(--dark); margin-bottom: 1.5rem; }
     .testi-author { display: flex; align-items: center; gap: 0.75rem; }
-
-    .avatar {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink-lt), var(--pink-dk));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; font-weight: 600; color: var(--white);
-      font-family: var(--sans); flex-shrink: 0;
-    }
-
+    .avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--pink-lt), var(--pink-dk)); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 600; color: var(--white); font-family: var(--sans); flex-shrink: 0; }
     .author-name { font-size: 0.82rem; font-weight: 600; color: var(--dark); }
     .author-city { font-size: 0.7rem; color: var(--muted); }
 
     /* ── CTA FINAL ── */
-    .cta {
-      padding: 8rem 5rem; text-align: center;
-      background: linear-gradient(160deg, var(--pink-pale) 0%, #fff 40%, var(--pink-pale) 100%);
-      position: relative; overflow: hidden;
-    }
-
-    .cta-title {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      font-weight: 600; line-height: 1.1;
-      color: var(--dark); margin-bottom: 1.5rem;
-    }
+    .cta { padding: 8rem 5rem; text-align: center; background: linear-gradient(160deg, var(--pink-pale) 0%, #fff 40%, var(--pink-pale) 100%); position: relative; overflow: hidden; }
+    .cta-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
     .cta-title em { font-style: italic; color: var(--pink); }
+    .cta-sub { color: var(--muted); font-size: 1rem; max-width: 460px; margin: 0 auto 3rem; line-height: 1.8; }
 
-    .cta-sub {
-      color: var(--muted); font-size: 1rem;
-      max-width: 460px; margin: 0 auto 3rem; line-height: 1.8;
-    }
+    .price-block { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .price-old { font-family: var(--sans); font-size: 1rem; color: var(--muted); text-decoration: line-through; }
+    .price-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); background: var(--pink-pale); border: 1px solid var(--border); padding: 0.35rem 1.2rem; border-radius: 100px; }
 
-    .price-block {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 0.5rem; margin-bottom: 2.5rem;
-    }
-    .price-old {
-      font-family: var(--sans); font-size: 1.1rem; color: var(--muted);
-      text-decoration: line-through;
-    }
-    .price-tag {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--pink);
-      background: var(--pink-pale); border: 1px solid var(--border);
-      padding: 0.35rem 1.2rem; border-radius: 100px;
-    }
-    .price-new {
-      font-family: var(--serif); font-size: 4.5rem; font-weight: 600;
-      color: var(--pink); line-height: 1;
-    }
-    .price-free {
-      font-size: 0.75rem; font-weight: 600; color: var(--pink-dk);
-      letter-spacing: 0.1em; text-transform: uppercase;
-    }
+    /* PREÇO MENOR — era 4.5rem, agora 3rem */
+    .price-new { font-family: var(--serif); font-size: 3rem; font-weight: 600; color: var(--pink); line-height: 1; }
+    .price-free { font-size: 0.75rem; font-weight: 600; color: var(--pink-dk); letter-spacing: 0.1em; text-transform: uppercase; }
 
-    .guarantee {
-      margin-top: 1.5rem; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2rem 5rem; display: flex;
-      justify-content: space-between; align-items: center;
-      background: var(--dark); border-top: 3px solid var(--pink);
-    }
-    .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--pink); letter-spacing: 0.1em; }
-    .footer-copy { font-size: 0.65rem; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+    .guarantee { margin-top: 1.5rem; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
 
     /* ── DIVIDER ── */
     .divider { height: 3px; background: linear-gradient(to right, transparent, var(--pink), transparent); }
+
+    /* ── FOOTER ── */
+    footer { padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; background: var(--dark); border-top: 3px solid var(--pink); }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--pink); letter-spacing: 0.1em; }
+    .footer-copy { font-size: 0.65rem; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
 
     /* ── FADE IN ── */
     .fi { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -363,12 +172,18 @@
     @media (max-width: 860px) {
       nav { padding: 1.1rem 1.5rem; }
       .nav-cta { display: none; }
-      .hero { grid-template-columns: 1fr; padding-top: 68px; }
-      .hero-left { padding: 3.5rem 1.5rem 2rem; order: 1; }
-      .hero-right { order: 2; padding: 1.5rem; }
+
+      /* Hero mobile — empilha vertical, foto aparece embaixo */
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
+      .hero-left { padding: 3rem 1.5rem 2rem; order: 1; }
+      .hero-right { order: 2; padding: 1.5rem 2rem 2.5rem; min-height: auto; }
+      .hero-img-wrap { max-width: 280px; margin: 0 auto; }
+
       .stats { grid-template-columns: repeat(2,1fr); }
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
       .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.2); }
+      .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+
       .section { padding: 4rem 1.5rem; }
       .section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .b-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -378,7 +193,10 @@
       .btn-lg { width: 100%; justify-content: center; padding: 1.2rem 2rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
     }
-    @media (max-width: 480px) { .b-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) {
+      .b-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -396,14 +214,8 @@
 <section class="hero">
   <div class="hero-left">
     <div class="eyebrow">Tecnologia de Salão</div>
-    <h1>
-      O segredo de quem<br/>
-      sempre tem o cabelo<br/>
-      <em>perfeito.</em>
-    </h1>
-    <p class="hero-sub">
-      Alisa, seca e dá volume ao mesmo tempo. Resultado de salão profissional em minutos — sem sair de casa, sem gastar fortunas.
-    </p>
+    <h1>O segredo de quem<br/>sempre tem o cabelo<br/><em>perfeito.</em></h1>
+    <p class="hero-sub">Alisa, seca e dá volume ao mesmo tempo. Resultado de salão profissional em minutos — sem sair de casa, sem gastar fortunas.</p>
     <a href="https://pay.kaiross.com.br/B0viJyurtCRj" class="btn">Quero a minha agora</a>
     <p class="hero-note">✦ Frete grátis &nbsp; ✦ Entrega para todo o Brasil</p>
   </div>
@@ -430,14 +242,8 @@
   <div class="section-inner">
     <div class="fi">
       <div class="section-label">A realidade</div>
-      <h2>
-        Quanto você gasta no<br/>
-        salão todo mês para<br/>
-        <em>o mesmo resultado?</em>
-      </h2>
-      <p class="body-text">
-        Horas esperando, dinheiro indo embora, e no dia seguinte o cabelo já não está igual. Existe uma forma de ter o resultado do salão todos os dias — na sua casa, no seu tempo, sem depender de ninguém.
-      </p>
+      <h2>Quanto você gasta no salão todo mês para<br/><em>o mesmo resultado?</em></h2>
+      <p class="body-text">Horas esperando, dinheiro indo embora, e no dia seguinte o cabelo já não está igual. Existe uma forma de ter o resultado do salão todos os dias — na sua casa, no seu tempo, sem depender de ninguém.</p>
     </div>
     <div class="produto-foto fi">
       <img src="escova-info.png" alt="Lumissé Studio — 3 em 1" />
@@ -452,36 +258,12 @@
     <h2 style="text-align:center">Feita para mulheres que<br/><em>não abrem mão do melhor</em></h2>
   </div>
   <div class="b-grid fi">
-    <div class="b-item">
-      <span class="b-icon">✨</span>
-      <div class="b-title">3 funções em 1</div>
-      <p class="b-desc">Alisa, seca e dá volume ao mesmo tempo. Substitui chapinha, secador e escova de salão.</p>
-    </div>
-    <div class="b-item">
-      <span class="b-icon">💆‍♀️</span>
-      <div class="b-title">Não danifica os fios</div>
-      <p class="b-desc">Cerdas flexíveis com pontas protetoras que deslizam suavemente sem quebrar ou ressecar.</p>
-    </div>
-    <div class="b-item">
-      <span class="b-icon">⚡</span>
-      <div class="b-title">Resultado em minutos</div>
-      <p class="b-desc">Secagem rápida e eficiente. Menos frizz, mais brilho, mais volume desde a primeira vez.</p>
-    </div>
-    <div class="b-item">
-      <span class="b-icon">🌸</span>
-      <div class="b-title">Fácil de usar</div>
-      <p class="b-desc">Design ergonômico que cabe na mão. Não cansa o braço, não enrola o cabelo.</p>
-    </div>
-    <div class="b-item">
-      <span class="b-icon">💅</span>
-      <div class="b-title">Seu cabelo, seu padrão</div>
-      <p class="b-desc">Liso, ondulado ou com volume — você define. Tecnologia que se adapta ao seu cabelo.</p>
-    </div>
-    <div class="b-item">
-      <span class="b-icon">💰</span>
-      <div class="b-title">Economize todo mês</div>
-      <p class="b-desc">Uma compra substitui meses de salão. Quem gasta R$200/mês joga fora R$2.400 por ano.</p>
-    </div>
+    <div class="b-item"><span class="b-icon">✨</span><div class="b-title">3 funções em 1</div><p class="b-desc">Alisa, seca e dá volume ao mesmo tempo. Substitui chapinha, secador e escova de salão.</p></div>
+    <div class="b-item"><span class="b-icon">💆‍♀️</span><div class="b-title">Não danifica os fios</div><p class="b-desc">Cerdas flexíveis com pontas protetoras que deslizam suavemente sem quebrar ou ressecar.</p></div>
+    <div class="b-item"><span class="b-icon">⚡</span><div class="b-title">Resultado em minutos</div><p class="b-desc">Secagem rápida e eficiente. Menos frizz, mais brilho, mais volume desde a primeira vez.</p></div>
+    <div class="b-item"><span class="b-icon">🌸</span><div class="b-title">Fácil de usar</div><p class="b-desc">Design ergonômico que cabe na mão. Não cansa o braço, não enrola o cabelo.</p></div>
+    <div class="b-item"><span class="b-icon">💅</span><div class="b-title">Seu cabelo, seu padrão</div><p class="b-desc">Liso, ondulado ou com volume — você define. Tecnologia que se adapta ao seu cabelo.</p></div>
+    <div class="b-item"><span class="b-icon">💰</span><div class="b-title">Economize todo mês</div><p class="b-desc">Uma compra substitui meses de salão. Quem gasta R$200/mês joga fora R$2.400 por ano.</p></div>
   </div>
 </section>
 
@@ -489,13 +271,8 @@
 
 <!-- LIFESTYLE -->
 <div class="lifestyle fi">
-  <p class="lifestyle-quote">
-    "Cabelo perfeito não é sorte.<br/>
-    É a ferramenta <em>certa</em> na mão certa."
-  </p>
-  <p class="lifestyle-sub">
-    A Lumissé Studio foi criada para mulheres que se cuidam, que têm padrão e que sabem que aparência é investimento — não gasto.
-  </p>
+  <p class="lifestyle-quote">"Cabelo perfeito não é sorte.<br/>É a ferramenta <em>certa</em> na mão certa."</p>
+  <p class="lifestyle-sub">A Lumissé Studio foi criada para mulheres que se cuidam, que têm padrão e que sabem que aparência é investimento — não gasto.</p>
   <a href="https://pay.kaiross.com.br/B0viJyurtCRj" class="btn-white">Quero a minha agora</a>
 </div>
 
@@ -510,28 +287,19 @@
       <div class="testi-q">"</div>
       <div class="stars">★★★★★</div>
       <p class="testi-text">Meu cabelo ficou igual ao do salão em 8 minutos. Não acreditei na primeira vez. Agora uso todo dia e minha autoestima foi lá em cima.</p>
-      <div class="testi-author">
-        <div class="avatar">A</div>
-        <div><div class="author-name">Amanda S.</div><div class="author-city">São Paulo, SP</div></div>
-      </div>
+      <div class="testi-author"><div class="avatar">A</div><div><div class="author-name">Amanda S.</div><div class="author-city">São Paulo, SP</div></div></div>
     </div>
     <div class="testi fi">
       <div class="testi-q">"</div>
       <div class="stars">★★★★★</div>
       <p class="testi-text">Gastava R$200 por mês no salão. Comprei a Lumissé há dois meses e nunca mais precisei. O resultado é o mesmo, juro.</p>
-      <div class="testi-author">
-        <div class="avatar">F</div>
-        <div><div class="author-name">Fernanda L.</div><div class="author-city">Curitiba, PR</div></div>
-      </div>
+      <div class="testi-author"><div class="avatar">F</div><div><div class="author-name">Fernanda L.</div><div class="author-city">Curitiba, PR</div></div></div>
     </div>
     <div class="testi fi">
       <div class="testi-q">"</div>
       <div class="stars">★★★★★</div>
       <p class="testi-text">Cabelo cacheado aqui. Achei que não ia funcionar pra mim. Funcionou demais. Liso, brilhoso e sem frizz. Recomendo de olhos fechados.</p>
-      <div class="testi-author">
-        <div class="avatar">J</div>
-        <div><div class="author-name">Juliana M.</div><div class="author-city">Belo Horizonte, MG</div></div>
-      </div>
+      <div class="testi-author"><div class="avatar">J</div><div><div class="author-name">Juliana M.</div><div class="author-city">Belo Horizonte, MG</div></div></div>
     </div>
   </div>
 </section>
@@ -539,13 +307,8 @@
 <!-- CTA FINAL -->
 <section class="cta">
   <div class="fi">
-    <h2 class="cta-title">
-      Seu cabelo de salão<br/>
-      começa <em>hoje.</em>
-    </h2>
-    <p class="cta-sub">
-      Uma compra. Para sempre sem depender de salão. Resultado profissional toda manhã, no seu tempo.
-    </p>
+    <h2 class="cta-title">Seu cabelo de salão<br/>começa <em>hoje.</em></h2>
+    <p class="cta-sub">Uma compra. Para sempre sem depender de salão. Resultado profissional toda manhã, no seu tempo.</p>
     <div class="price-block">
       <span class="price-old">De R$ 197,00</span>
       <span class="price-tag">🌸 Oferta especial — economize R$57</span>
